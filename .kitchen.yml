@@ -1,0 +1,34 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+# Uncomment the following verifier to leverage Inspec instead of Busser (the
+# default verifier)
+# verifier:
+#   name: inspec
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: consul1_vault1 
+    run_list:
+      - recipe[consul_vault::default]
+    attributes:
+  - name: consul2_vault_2
+    run_list:
+      - recipe[consul_vault::default]
+    attributes:
+  - name: consul3
+    run_list:
+      - recipe[consul_vault::default]
+    attributes:
+  - name: consulclient
+    run_list:
+      - recipe[consul_vault::default]
+    attributes:
+
+
