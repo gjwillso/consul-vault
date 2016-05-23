@@ -5,6 +5,9 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 #
 #
-package "unzip" do
-  action :install
-end
+
+include_recipe 'selinux::permissive'
+#include_recipe 'consul-vault::consul_user'
+include_recipe 'consul-vault::consul'
+
+
